@@ -8,10 +8,5 @@ export default defineConfig({
   server: {
     host: 'localhost',
     port: 3000
-  },
-  build: {
-    rollupOptions: {
-      external: ['react-router-dom']
-    }
   }
 })
