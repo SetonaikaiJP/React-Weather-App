@@ -4,6 +4,16 @@ import DataAssetThreeDays from "./DataAssetThreeDays";
 
 const WeekContainer = ({ data }) => {
   const days = ["Today", "Tomorrow", "in 2 days", "in 3 days", "in 4 days", "in 5 days", "in 6 days"];
+  const handleHorizontalWheel = (event) => {
+    if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) {
+      return;
+    }
+    event.preventDefault();
+    event.currentTarget.scrollBy({
+      left: event.deltaY,
+      behavior: "smooth",
+    });
+  };
 
   if (!data || !data.days) {
     return Spinner({ loading: true });
@@ -12,7 +22,7 @@ const WeekContainer = ({ data }) => {
   return (
     <>
       <h2 className='container-title'>Week Weather</h2>
-      <div className='data-wrapper week-wrapper'>
+      <div className='data-wrapper week-wrapper' onWheel={handleHorizontalWheel}>
         {data.days.slice(0,7).map((day, index) => {
           return (
             <DataAssetThreeDays 

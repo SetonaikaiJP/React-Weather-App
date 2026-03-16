@@ -1,0 +1,70 @@
+.admin-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.admin-card {
+  width: 100%;
+  max-width: 460px;
+  background: #565b5f;
+  border-radius: 14px;
+  padding: 24px;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.admin-title {
+  margin: 0 0 8px;
+}
+
+.admin-subtitle {
+  margin: 0 0 16px;
+  color: #d6dde2;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #61686d;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.toggle-row input {
+  width: 18px;
+  height: 18px;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.admin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.reset-btn {
+  background: #f4f4f4;
+  color: #3d4145;
+}
+
+.back-btn {
+  background: #111;
+  color: #fff;
+}
+

@@ -7,17 +7,25 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
+import AdminPage from "./pages/AdminPage";
+import { FeatureFlagsProvider } from "./context/FeatureFlagsContext";
 
 const App = () => {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<MainLayout />}>
-      </Route>
+      <>
+        <Route path="/" element={<MainLayout />} />
+        <Route path="/admin" element={<AdminPage />} />
+      </>
     )
   );
 
-  return <RouterProvider router={router} />;
+  return (
+    <FeatureFlagsProvider>
+      <RouterProvider router={router} />
+    </FeatureFlagsProvider>
+  );
 };
 
 export default App;
